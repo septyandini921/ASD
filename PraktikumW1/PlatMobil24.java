@@ -32,15 +32,15 @@ public class PlatMobil24 {
         }
 
         if (kodeIndex != -1) {
-            for (char c : KOTA[kodeIndex]) {
-                System.out.print(c);
+            for (char x : KOTA[kodeIndex]) {
+                System.out.print(x);
             }
             System.out.println();
         } else {
             System.out.println("Kode plat tidak valid.");
         }
 
-        System.out.println("Apakah anda ingin memeriksa kode play kembali? (y/t)");
+        System.out.println("Apakah anda ingin memeriksa kode plat kembali? (y/t)");
         periksaKembali=sc.next().charAt(0);
             
         } while (periksaKembali == 'y' || periksaKembali == 'Y');
