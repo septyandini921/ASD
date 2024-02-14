@@ -1,4 +1,4 @@
-package Praktikum01;
+package PraktikumW1;
 import java.util.Scanner;
 public class SIAKAD24 {
 
