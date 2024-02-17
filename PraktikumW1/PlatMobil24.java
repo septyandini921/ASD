@@ -19,8 +19,8 @@ public class PlatMobil24 {
             {'T', 'E', 'G', 'A', 'L'},
         };
 
-        do {
-            System.out.println("\nInputkan kode plat nomor: ");
+        
+            System.out.print("\nInputkan kode plat nomor: ");
             kodeInput=sc.next().charAt(0);
 
             int kodeIndex = -1;
@@ -30,7 +30,7 @@ public class PlatMobil24 {
                 break;
             }
         }
-
+        
         if (kodeIndex != -1) {
             for (char x : KOTA[kodeIndex]) {
                 System.out.print(x);
@@ -40,10 +40,7 @@ public class PlatMobil24 {
             System.out.println("Kode plat tidak valid.");
         }
 
-        System.out.println("Apakah anda ingin memeriksa kode plat kembali? (y/t)");
-        periksaKembali=sc.next().charAt(0);
-            
-        } while (periksaKembali == 'y' || periksaKembali == 'Y');
+    
 
         
 
