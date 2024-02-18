@@ -14,7 +14,7 @@ public class SIAKAD24 {
         System.out.println("Program Menghitung IP Semester");
         System.out.println("======================");
 
-        for (int i = 0; i < 10; i++) {  //loop inputan
+        for (int i = 0; i < 10; i++) {  
             System.out.print("\nMasukkan Nama Mata Kuliah ke-" + (i + 1) + ": ");
             namaMatkul[i] = sc.nextLine();
             System.out.print("Masukkan Nilai Angka Mata Kuliah ke-" + (i + 1) + ": ");
@@ -25,7 +25,6 @@ public class SIAKAD24 {
             System.out.print("Masukkan Nilai Huruf Mata Kuliah ke-" + (i + 1) + ": ");
             nilaiHuruf[i] = sc.nextLine();
 
-            //konversi nilai huruf ke nilai angka
             if (nilaiHuruf[i].equalsIgnoreCase("A")) {
                 bobotNilai[i] = 4.0;
             } else if (nilaiHuruf[i].equalsIgnoreCase("B+")) {
@@ -43,7 +42,6 @@ public class SIAKAD24 {
             }
         }
 
-        //cetak data inputan
         System.out.println("======================");
         System.out.println("Data Mata Kuliah yang Diinputkan");
         System.out.println("======================");
@@ -52,7 +50,6 @@ public class SIAKAD24 {
             System.out.println(String.format("%s\t\t%.2f\t\t%s\t\t%.2f", namaMatkul[i], nilaiAngka[i], nilaiHuruf[i], bobotNilai[i]));
         }
 
-        //hitung ip
         double totalBobot = 0;
         double totalNilai = 0;
         for (int i = 0; i < 10; i++) {
