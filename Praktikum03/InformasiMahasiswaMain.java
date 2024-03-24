@@ -7,7 +7,7 @@ public class InformasiMahasiswaMain {
         Scanner sc = new Scanner(System.in);
         InformasiMahasiswa [] arrayInformasiMahasiswas = new InformasiMahasiswa[3];
 
-        for (int i = 0; i< 3 ; i++) {
+        for (int i = 0; i< arrayInformasiMahasiswas.length ; i++) {
             arrayInformasiMahasiswas[i] = new InformasiMahasiswa();
             System.out.println("\nMasukkan data mahasiswa ke-" + (i + 1));
             System.out.print("Nama: ");
@@ -22,10 +22,8 @@ public class InformasiMahasiswaMain {
         }
 
         double totalIPK = 0;
-        for (int i = 0; i< 3; i++) {
-            totalIPK += arrayInformasiMahasiswas[i].IPK;
-        }
-        double rataRataIPK = totalIPK/3;
+        
+        
 
         for (InformasiMahasiswa mahasiswa : arrayInformasiMahasiswas) {
             System.out.println("\nMahasiswa");
@@ -33,8 +31,10 @@ public class InformasiMahasiswaMain {
             System.out.println("NIM: " + mahasiswa.NIM);
             System.out.println("Jenis Kelamin: " + mahasiswa.jenisKelamin);
             System.out.println("IPK: " + mahasiswa.IPK);
+
+            totalIPK += mahasiswa.IPK;
         }
-        
+        double rataRataIPK = totalIPK/3;
         System.out.printf("\nRata-rata IPK:%.2f ", rataRataIPK);
         
     }

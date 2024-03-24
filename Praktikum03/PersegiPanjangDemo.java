@@ -10,6 +10,7 @@ public class PersegiPanjangDemo {
         panjangArrayPp = sc.nextInt();
 
         PersegiPanjang [] arrayofPersegiPanjang = new PersegiPanjang[panjangArrayPp];
+        PersegiPanjang persegiPanjang1 = new PersegiPanjang(panjang, lebar);
 
         for (int i = 0; i<panjangArrayPp; i++) {
             
