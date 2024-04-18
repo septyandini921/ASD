@@ -14,5 +14,11 @@ public class Mahasiswa {
     public void displayInfo(){
         System.out.println(nama + " (Umur: " + umur + " IPK: " + ipk + ")");
     }
+
+    public boolean contains(String keyword) {
+        return this.nama.toLowerCase().contains(keyword.toLowerCase());
+    }
+
+    
     
 }

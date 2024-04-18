@@ -19,7 +19,9 @@ public class Kelas {
 
     public void displayInfo() {
         for (Mahasiswa mahasiswa : daftarMahasiswa) {
-            mahasiswa.displayInfo();
+            if (mahasiswa != null) {
+                mahasiswa.displayInfo();
+            }
         }
     }
 
@@ -72,5 +74,77 @@ public class Kelas {
         }
     }
 
+    public void displayInfo(int index) {
+        if (index >= 0 && index < daftarMahasiswa.length) {
+            if (daftarMahasiswa[index] != null) {
+                daftarMahasiswa[index].displayInfo();
+            } else {
+                System.out.println("Mahasiswa tidak ditemukan pada indeks " + index);
+            }
+        } else {
+            System.out.println("Indeks tidak valid");
+        }
     }
+
+    // public boolean contains(String keyword) {
+    //     return this.nama.toLowerCase().contains(keyword.toLowerCase());
+    // }
+    
+    // public void searchByNama(String keyword) {
+    //     boolean found = false;
+    //     for (int i = 0; i < daftarMahasiswa.length; i++) {
+    //         if (daftarMahasiswa[i].nama.toLowerCase().contains(keyword.toLowerCase())) {
+    //             System.out.println("Mahasiswa ditemukan pada indeks: " + i);
+    //             daftarMahasiswa[i].displayInfo();
+    //             found = true;
+    //         }
+    //     }
+    //     if (!found) {
+    //         System.out.println("Mahasiswa dengan nama '" + keyword + "' tidak ditemukan.");
+    //     }
+    // }
+    
+
+    public void sequentialSearchByNama(String keyword) {
+        boolean found = false;
+        for (int i = 0; i < daftarMahasiswa.length; i++) {
+            if (daftarMahasiswa[i] != null && daftarMahasiswa[i].contains(keyword)) {
+                System.out.println("Mahasiswa ditemukan pada indeks: " + i);
+                daftarMahasiswa[i].displayInfo();
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Mahasiswa dengan nama '" + keyword + "' tidak ditemukan.");
+        }
+    }
+    
+     
+    public void binarySearchByUmur(int umur) {
+        selectionSortByUmur();
+    
+        int l = 0, r = daftarMahasiswa.length - 1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+    
+            if (daftarMahasiswa[m].umur == umur) {
+                System.out.println("Mahasiswa dengan umur " + umur + " ditemukan pada indeks: " + m);
+                daftarMahasiswa[m].displayInfo();
+                return;
+            }
+    
+            if (daftarMahasiswa[m].umur > umur)
+                r = m - 1;
+    
+            else
+                l = m + 1;
+        }
+    
+        System.out.println("Mahasiswa dengan umur " + umur + " tidak ditemukan.");
+    }
+    
+    
+    
+
+}
 

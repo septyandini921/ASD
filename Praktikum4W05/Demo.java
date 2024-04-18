@@ -20,6 +20,14 @@ public class Demo {
         kelas1A.selectionSortByUmur();
         kelas1A.insertionSortByIPKDesc();;
         kelas1A.displayInfo();
+
+        
+
+        kelas1A.sequentialSearchByNama("Ani");
+        kelas1A.binarySearchByUmur(18);
+
+        
+        
     }
     
 }
